@@ -10,12 +10,29 @@ images and masks. You need to change the code based on your folder structure
 or organize your data to the format below.
 
 bf_intorg_YOLOv8_dev/   #Primary data folder for the project
-├── processed_bf_organoids/  #All input data is stored here. 
+├── training_data/  #All input data is stored here. 
 │   ├── train_images/
 │   │   ├── image01.png
 │   │   ├── image02.png
 │   │   └── ...
 │   ├── train_masks/         #All binary masks organized in respective sub-directories.
+│   │   ├── dead/
+│   │   │   ├── image01.png
+│   │   │   ├── image02.png
+│   │   │   └── ...
+│   │   ├── differentiated/
+│   │   │   ├── image01.png
+│   │   │   ├── image02.png
+│   │   │   └── ...
+│   │   ├── undifferentiated/
+│   │       ├── image01.png
+│   │       ├── image02.png
+│   │       └── ...
+│   ├── val_images/
+│   │   ├── image01.png
+│   │   ├── image02.png
+│   │   └── ...
+│   ├── val_masks/            
 │   │   ├── dead/
 │   │   │   ├── image01.png
 │   │   │   ├── image02.png
@@ -174,6 +191,12 @@ def process_masks(mask_path, dest_json):
 
 
 if __name__ == "__main__":
-    train_mask_path = "./processed_bf_organoids/train_masks/"
-    train_json_path = "./processed_bf_organoids/train_images/train.json"
+    # Process training dataset
+    train_mask_path = "./training_data/train_masks/"
+    train_json_path = "./training_data/train_images/train.json"
     process_masks(train_mask_path, train_json_path)
+
+    # Process validation dataset
+    val_mask_path = "./training_data/val_masks/"
+    val_json_path = "./training_data/input/val_images/val.json"
+    process_masks(val_mask_path, val_json_path)
