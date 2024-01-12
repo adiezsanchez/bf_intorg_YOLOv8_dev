@@ -198,5 +198,5 @@ if __name__ == "__main__":
 
     # Process validation dataset
     val_mask_path = "./training_data/val_masks/"
-    val_json_path = "./training_data/input/val_images/val.json"
+    val_json_path = "./training_data/val_images/val.json"
     process_masks(val_mask_path, val_json_path)
