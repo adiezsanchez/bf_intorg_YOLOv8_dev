@@ -2,4 +2,5 @@ apeer_annotations
 preprocessed_annotations
 processed_bf_organoids
 training_data
-yolo_dataset
+datasets
+yolov8n-seg.pt
