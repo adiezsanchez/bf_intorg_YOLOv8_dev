@@ -138,8 +138,8 @@ def create_yaml(
 
 
 if __name__ == "__main__":
-    base_input_path = "training data/"
-    base_output_path = "yolo_dataset/"
+    base_input_path = "./training_data/"
+    base_output_path = "./yolo_dataset/"
 
     # Processing training dataset
     convert_to_yolo(
