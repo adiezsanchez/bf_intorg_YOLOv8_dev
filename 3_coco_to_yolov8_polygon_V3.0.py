@@ -132,6 +132,9 @@ def create_yaml(
         "val": val_path,
     }
 
+    # Make directory for yaml (quickfix)
+    os.makedirs("./datasets/yolo_dataset/")
+
     # Write the dictionary to a YAML file
     with open(output_yaml_path, "w") as file:
         yaml.dump(yaml_data, file, default_flow_style=False)
@@ -139,29 +142,37 @@ def create_yaml(
 
 if __name__ == "__main__":
     base_input_path = "./training_data/"
-    base_output_path = "./datasets/yolo_dataset/"
+    base_output_path = "./datasets/"
 
     # Processing training dataset
     convert_to_yolo(
         input_images_path=os.path.join(base_input_path, "train_images"),
         input_json_path=os.path.join(base_input_path, "train_images/train.json"),
-        output_images_path=os.path.join(base_output_path, "train/images"),
-        output_labels_path=os.path.join(base_output_path, "train/labels"),
+        output_images_path=os.path.join(
+            base_output_path, "datasets/yolo_dataset/train/images"
+        ),
+        output_labels_path=os.path.join(
+            base_output_path, "datasets/yolo_dataset/train/labels"
+        ),
     )
 
     # Processing validation dataset
     convert_to_yolo(
         input_images_path=os.path.join(base_input_path, "val_images"),
         input_json_path=os.path.join(base_input_path, "val_images/val.json"),
-        output_images_path=os.path.join(base_output_path, "valid/images"),
-        output_labels_path=os.path.join(base_output_path, "valid/labels"),
+        output_images_path=os.path.join(
+            base_output_path, "datasets/yolo_dataset/valid/images"
+        ),
+        output_labels_path=os.path.join(
+            base_output_path, "datasets/yolo_dataset/valid/labels"
+        ),
     )
 
     # Creating the YAML configuration file
     create_yaml(
         input_json_path=os.path.join(base_input_path, "train_images/train.json"),
-        output_yaml_path=os.path.join(base_output_path, "data.yaml"),
-        train_path="./yolo_dataset/train/images",
-        val_path="./yolo_dataset/valid/images",
+        output_yaml_path=os.path.join(base_output_path, "yolo_dataset/data.yaml"),
+        train_path="./train/images",
+        val_path="./valid/images",
         test_path=None,  # or None if not applicable
     )
