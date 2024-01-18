@@ -29,13 +29,13 @@ In order to train the YOLOv8 the initial binary masks defining each class instan
 
 4. Finally we will be using a different environment to contain the ultralytics packages needed to train our own YOLOv8 segmentation model (notebook 5). This relies on pytorch, and if you want to leverage CUDA GPU acceleration you'll need to perform a few checks:
 
-  <code># Check your CUDA Toolkit version, in my case it is version 12.1 as you see in the output below</code>
-  <code>nvcc --version</code>
+    <code># Check your CUDA Toolkit version, in my case it is version 12.1 as you see in the output below</code>
+    <code>nvcc --version</code>
 
-  ![cudav](./images/cuda_version.png)
+    ![cudav](./images/cuda_version.png)
 
 5. If your CUDA version is 12.1 and cuDNN version is 8.0 you can use the following code to create a working yolov8-GPU environment.
 
-  <code>mamba env create -f yolov8-GPU.yml --name yolov8-GPU</code>
+    <code>mamba env create -f yolov8-GPU.yml --name yolov8-GPU</code>
 
 6. Otherwise you'll need to do a bit of Googling.
