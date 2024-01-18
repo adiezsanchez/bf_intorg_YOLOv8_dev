@@ -11,7 +11,9 @@ As a starting point the ground truth annotations for each raw image (.czi) are i
 
 In our particular dataset we have 3 classes of intestinal organoids: dead (or overgrown organoids), differentiated (developed organoids) or undifferentiated (aka spheroids). The resulting model will detect, segment and classify each of those instances.
 
-![classes](./images/classes.png)
+<p align="center">
+  <img src="./images/classes.png" alt="classes" width="70%">
+</p>
 
 In order to train the YOLOv8 the initial binary masks defining each class instances must be converted to COCO polygon .json files and later on into YOLO-style polygon .txt files. Executing the notebooks and .py files in a sequential order (1 to 5) allows to do so.
 
