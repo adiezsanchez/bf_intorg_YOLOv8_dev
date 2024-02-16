@@ -7,7 +7,7 @@
 
 The goal of this repository is to obtain a custom YOLOv8 model to segment and classify intestinal organoids and spheroids from brightfield images acquired using a widefield microscope. The obtained model will be used in the [intestinal_organoid_brightfield_analysis](https://github.com/adiezsanchez/intestinal_organoid_brightfield_analysis) repository.
 
-As a starting point the ground truth annotations for each raw image (.czi) are in a .tiff file format, where each "channel" contains a binary mask defining instances of each class. Training dataset can be downloaded [here](https://dropbox.com)
+As a starting point the ground truth annotations for each raw image (.czi) are in a .tiff file format, where each "channel" contains a binary mask defining instances of each class. Training dataset can be downloaded [here](https://www.dropbox.com/scl/fi/o6ba5ah6u9xq03prqtge3/apeer_annotations_renamed.zip?rlkey=1j35zeod69rzyak1iav8bq6m1&dl=0)
 
 In our particular dataset we have 3 classes of intestinal organoids: dead (or overgrown organoids), differentiated (developed organoids) or undifferentiated (aka spheroids). The resulting model will detect, segment and classify each of those instances.
 
@@ -19,23 +19,12 @@ In order to train the YOLOv8 the initial binary masks defining each class instan
 
 <h2>Instructions</h2>
 
-1. In order to run these Jupyter notebooks and .py scripts you will need to familiarize yourself with the use of Python virtual environments using Mamba. See instructions [here](https://biapol.github.io/blog/mara_lampert/getting_started_with_mambaforge_and_python/readme.html).
+1. In order to run these Jupyter notebooks you will need to familiarize yourself with the use of Python virtual environments using Mamba. See instructions [here](https://biapol.github.io/blog/mara_lampert/getting_started_with_mambaforge_and_python/readme.html).
 
-2. Then you will need to create a couple of virtual environments. One to preprocess all the data including napari and opencv, and another one to train the YOLOv8 model.
+2. Then you will need to create a virtual environment (venv) either using the following command or recreate the environment from the .yml file you can find in the envs folder:
 
-3. To run Jupyter notebooks and .py files 1 to 4 we will be using the napari-opencv environment that you can create from the YAML file found under the configs folder:
+   <code>mamba create -n int_organoids python=3.9 devbio-napari cellpose pytorch torchvision plotly pyqt ultralytics -c conda-forge -c pytorch</code>
 
-   <code>mamba env create -f napari-opencv.yml --name napari-opencv</code>
+3. To recreate the venv from the environment.yml file stored in the configs folder (recommended) navigate into the envs folder using <code>cd</code> in your console and then execute:
 
-4. Finally we will be using a different environment to contain the ultralytics packages needed to train our own YOLOv8 segmentation model (notebook 5). This relies on pytorch, and if you want to leverage CUDA GPU acceleration you'll need to perform a few checks:
-
-    <code># Check your CUDA Toolkit version, in my case it is version 12.1 as you see in the output below</code>
-    <code>nvcc --version</code>
-
-    ![cudav](./images/cuda_version.png)
-
-5. If your CUDA version is 12.1 and cuDNN version is 8.0 you can use the following code to create a working yolov8-GPU environment.
-
-    <code>mamba env create -f yolov8-GPU.yml --name yolov8-GPU</code>
-
-6. Otherwise you'll need to do a bit of Googling.
+   <code>mamba env create -f environment.yml</code>
