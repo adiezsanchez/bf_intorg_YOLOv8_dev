@@ -5,7 +5,7 @@
 
 ![workflow](./images/workflow.png)
 
-The goal of this repository is to obtain a custom YOLOv8 model to segment and classify intestinal organoids and spheroids from brightfield images acquired using a widefield microscope. The obtained model will be used in the [intestinal_organoid_brightfield_analysis](https://github.com/adiezsanchez/intestinal_organoid_brightfield_analysis) repository.
+The goal of this repository is to obtain a custom YOLOv8 model to segment and classify intestinal organoids and spheroids from brightfield images acquired using a widefield microscope. The obtained model will be used in the [Instance Segmentation of Intestinal organoids and Spheroids from BrightField images using YOLOv8 (ISIS-BF)](https://github.com/adiezsanchez/intestinal_organoid_yolov8) repository.
 
 As a starting point the ground truth annotations for each raw image (.czi) are in a .tiff file format, where each "channel" contains a binary mask defining instances of each class. Training dataset can be downloaded [here](https://www.dropbox.com/scl/fi/o6ba5ah6u9xq03prqtge3/apeer_annotations_renamed.zip?rlkey=1j35zeod69rzyak1iav8bq6m1&dl=0)
 
@@ -25,6 +25,8 @@ In order to train the YOLOv8 the initial binary masks defining each class instan
 
    <code>mamba create -n int_organoids python=3.9 devbio-napari cellpose pytorch torchvision plotly pyqt ultralytics -c conda-forge -c pytorch</code>
 
-3. To recreate the venv from the environment.yml file stored in the configs folder (recommended) navigate into the envs folder using <code>cd</code> in your console and then execute:
+3. To recreate the venv from the environment.yml file stored in the envs folder (recommended) navigate into the envs folder using <code>cd</code> in your console and then execute:
 
    <code>mamba env create -f environment.yml</code>
+
+4. The resulting environment will allow you to run the model training in the CPU, if you want to leverage your CUDA GPU you will need to check CUDA and cuDNN version compatibility with your hardware.
