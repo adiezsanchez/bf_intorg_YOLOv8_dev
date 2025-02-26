@@ -7,7 +7,7 @@
 
 The goal of this repository is to obtain a custom YOLOv8 model to segment and classify intestinal organoids and spheroids from brightfield images acquired using a widefield microscope. The obtained model will be used in the [Instance Segmentation of Intestinal organoids and Spheroids from BrightField images using YOLOv8 (ISIS-BF)](https://github.com/adiezsanchez/intestinal_organoid_yolov8) repository.
 
-As a starting point the ground truth annotations for each raw image (.czi) are in a .tiff file format, where each "channel" contains a binary mask defining instances of each class. Training dataset can be downloaded [here](https://www.dropbox.com/scl/fi/o6ba5ah6u9xq03prqtge3/apeer_annotations_renamed.zip?rlkey=1j35zeod69rzyak1iav8bq6m1&dl=0)
+As a starting point the ground truth annotations for each raw image (.czi) are in a .tiff file format, where each "channel" contains a binary mask defining instances of each class. Training dataset can be downloaded following the instructions below.
 
 In our particular dataset we have 3 classes of intestinal organoids: dead (or overgrown organoids), differentiated (developed organoids) or undifferentiated (aka spheroids). The resulting model will detect, segment and classify each of those instances.
 
