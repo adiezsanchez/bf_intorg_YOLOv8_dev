@@ -34,3 +34,11 @@ In order to train the YOLOv8 the initial binary masks defining each class instan
    <code>mamba create -n int_organoids_GPU python=3.9 devbio-napari pytorch=2.1.2=py3.9_cuda12.1_cudnn8_0 torchvision plotly pyqt ultralytics python-kaleido -c conda-forge -c pytorch -c nvidia</code>
 
 5. If you happen to have the same CUDA and cuDNN version you can recreate the from the environment_GPU.yml file stored in the envs folder.
+
+<h2>Training Data Download</h2>
+
+1. [Contact Me](mailto:alberto.d.sanchez@ntnu.no) to obtain a fresh working S3 bucket pre-signed link.
+
+2. Paste the link inside <code>0_data_download.ipynb</code> notebook after <code>presigned_url</code>.
+
+3. Run the notebook to download and extract the data.
