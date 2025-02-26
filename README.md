@@ -31,6 +31,6 @@ In order to train the YOLOv8 the initial binary masks defining each class instan
 
 4. The resulting environment will allow you to run the model training in the CPU, if you want to leverage your CUDA GPU you will need to check CUDA and cuDNN version compatibility with your hardware. In my case I have CUDA 12.1 and cuDNN 8.0 hence I can use the following command to create a working venv that leverages the CUDA cores in my GPU for training the YOLOv8 model:
 
-   <code>mamba create -n int_organoids_GPU python=3.9 devbio-napari cellpose pytorch=2.1.2=py3.9_cuda12.1_cudnn8_0 torchvision plotly pyqt ultralytics python-kaleido -c conda-forge -c pytorch -c nvidia</code>
+   <code>mamba create -n int_organoids_GPU python=3.9 devbio-napari pytorch=2.1.2=py3.9_cuda12.1_cudnn8_0 torchvision plotly pyqt ultralytics python-kaleido -c conda-forge -c pytorch -c nvidia</code>
 
 5. If you happen to have the same CUDA and cuDNN version you can recreate the from the environment_GPU.yml file stored in the envs folder.
