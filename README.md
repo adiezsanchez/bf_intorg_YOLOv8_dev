@@ -117,7 +117,7 @@ Binary masks were converted to COCO polygon annotations with OpenCV contour extr
 
 This is an example from APA, the most popular citation style:
 
-<code>Díez-Sánchez, A. (2026). adiezsanchez/intestinal_organoid_yolov8: ISiOS-BF-YOLO (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.20118754 </code>
+<code>Díez-Sánchez, A. (2026). adiezsanchez/bf_intorg_YOLOv8_dev: ISiOS-BF-YOLOseg (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.20118754</code>
 
 <h2>Related publications</h2>
 
