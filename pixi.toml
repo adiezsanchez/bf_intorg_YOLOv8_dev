@@ -1,0 +1,39 @@
+[project]
+name = "bf_intorg_yolov8"
+channels = ["pytorch", "nvidia", "conda-forge"]
+platforms = ["win-64"]
+
+[dependencies]
+python = "3.9.*"
+pytorch = "==2.1.2"
+pytorch-cuda = "12.1.*"
+napari = "*"
+devbio-napari = "*"
+numpy = "*"
+pandas = "*"
+tifffile = "*"
+czifile = "*"
+matplotlib = "*"
+tqdm = "*"
+scikit-image = "*"
+scikit-learn = "*"
+plotly = "*"
+pyclesperanto-prototype = "*"
+jupyterlab = "*"
+ultralytics = "==8.3.79"
+opencv = "*"
+requests = "*"
+seaborn = "*"
+pyyaml = "*"
+pillow = "==9.2.0"
+ipykernel = "*"
+boto3 = "*"
+
+[pypi-dependencies]
+torchvision = "==0.16.2"
+
+[tasks]
+lab = "jupyter lab"
+fix-pillow = "python -m pip install --no-deps --force-reinstall pillow==9.2.0"
+fix-opencv = "python -m pip install --no-deps --ignore-installed opencv-python==4.10.0.84"
+postfix-windows-dll = { depends-on = ["fix-pillow", "fix-opencv"] }
