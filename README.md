@@ -113,7 +113,7 @@ Binary masks were converted to COCO polygon annotations with OpenCV contour extr
 
 - For APA, Harvard, MLA, Vancouver, Chicago and IEEE styles, visit [Zenodo](https://doi.org/10.5281/zenodo.20118754) and in the right panel at the bottom you will find the Citation section. [![DOI](https://zenodo.org/badge/741514938.svg)](https://doi.org/10.5281/zenodo.20118754)
 
-- If you use the trained model in downstream brightfield plate analysis, also cite the inference pipeline on [Zenodo](https://doi.org/10.5281/zenodo.20085163): [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20085163.svg)](https://doi.org/10.5281/zenodo.20085163)
+- If you use the trained model in downstream brightfield plate analysis, also cite the inference pipeline on [Zenodo](https://doi.org/10.5281/zenodo.20085163): [![DOI](https://zenodo.org/badge/741514938.svg)](https://doi.org/10.5281/zenodo.20118754)
 
 This is an example from APA, the most popular citation style:
 
